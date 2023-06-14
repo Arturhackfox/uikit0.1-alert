@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         let alertController = UIAlertController(title: "Success!", message: "Message sent.", preferredStyle: .alert)
         
         //MARK: - create action buttons for alert
-        let action = UIAlertAction(title: "Ok.", style: .default){ action in
+        let action = UIAlertAction(title: "Ok.", style: .default){ _ in
             
             let textField = alertController.textFields?.first?.text
             self.textFieldLabel.text! += textField!
@@ -36,8 +36,8 @@ class ViewController: UIViewController {
         }
         
         //MARK: - add button + textField to alert
-        alertController.addTextField { text in
-            
+        alertController.addTextField { textField in
+            textField.isSecureTextEntry = true
         }
         alertController.addAction(action)
         
